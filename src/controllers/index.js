@@ -1,10 +1,10 @@
 const express = require('express');
 
 const { getSignup } = require('./getSignup');
-const { postSignup } = require('./postSignup');
 const { getHome } = require('./getHome');
 const { getLogin } = require('./getLogin');
 const { postLogin } = require('./postLogin');
+const { postSignup } = require('./postSignup');
 
 const router = express.Router();
 
