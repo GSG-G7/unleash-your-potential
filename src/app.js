@@ -1,12 +1,14 @@
 const path = require('path');
 const express = require('express');
 const exphs = require('express-handlebars');
+const cookieParser = require('cookie-parser')
 
 const router = require('./controllers/index');
 
 const PORT = process.env.PORT || 3030;
 const app = express();
 
+app.use(cookieParser());
 app.set('port', PORT);
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
