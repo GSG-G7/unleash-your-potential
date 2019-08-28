@@ -5,7 +5,7 @@ exports.postLogin = (req, res) => {
   Joi.validate(req.body, loginSchema, (err, value) => {
     if (err) {
       console.log(err);
-    } else{
+    } else {
       console.log(value);
     }
   });
