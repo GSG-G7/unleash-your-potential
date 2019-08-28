@@ -1,3 +1,9 @@
+const { getPosts } = require('../database/queries/getPost');
+
 exports.getHome = (req, res, next) => {
-  res.render('home');
+  getPosts()
+    .then((posts) => {
+      res.render('home', { allPosts: posts.rows });
+    })
+    .catch((err) => next(err.stacks));
 };

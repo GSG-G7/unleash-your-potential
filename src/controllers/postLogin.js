@@ -22,7 +22,8 @@ exports.postLogin = (req, res) => {
                   res.cookie('id', user.id);
                   res.render('home',{ name: user.user_name });
             });
-          } else {
+          });
+         } else {
             res.render('login', { error: 'Password or email is wrong' });
           }
         });
