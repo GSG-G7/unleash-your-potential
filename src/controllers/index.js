@@ -7,6 +7,7 @@ const { postLogin } = require('./postLogin');
 const { postSignup } = require('./postSignup');
 const { getAddPost } = require('./getAddPost');
 const { addPost } = require('./addPost');
+const { getUserData } = require('./getUserData');
 
 const router = express.Router();
 
@@ -17,5 +18,6 @@ router.get('/signup', getSignup);
 router.post('/signup', postSignup);
 router.get('/addpost', getAddPost);
 router.post('/addpost', addPost);
+router.get('/profile', getUserData);
 
 module.exports = router;
