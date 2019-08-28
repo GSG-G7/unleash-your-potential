@@ -20,10 +20,10 @@ exports.postLogin = (req, res) => {
               getUser(value).then((user) => user.rows[0])
                 .then((user) => {
                   res.cookie('id', user.id);
-                  res.render('home',{ name: user.user_name });
+                  res.render('home', { name: user.user_name });
+                });
             });
-          });
-         } else {
+          } else {
             res.render('login', { error: 'Password or email is wrong' });
           }
         });
