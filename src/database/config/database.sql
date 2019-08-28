@@ -13,7 +13,7 @@ CREATE TABLE posts(
     title VARCHAR(255),
     description TEXT,
     content TEXT,
-    published_at DATE,
+    published_at TEXT,
     user_id int,
     FOREIGN KEY (user_id) REFERENCES users(id)
 );

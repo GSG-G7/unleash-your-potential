@@ -1,2 +1,2 @@
-const dbTest = require('./db.test');
-const endPoint = require('./endpoint.test');
+require('./db.test');
+require('./endpoint.test');
