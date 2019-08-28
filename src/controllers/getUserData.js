@@ -8,10 +8,10 @@ exports.getUserData = (req, res, next) => {
     if (err) {
       console.log(err);
     } else {
-      console.log(decoded);
+      console.log('hhhh',req.cookies.id);
       getUserById(req.cookies.id)
         .then((User) => {
-          res.render('/profile', { UserData: User.rows[0] });
+          res.render('profile', { UserData: User.rows });
         })
         .catch((error) => next(error.stacks));
     }
