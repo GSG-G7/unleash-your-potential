@@ -1,15 +1,15 @@
-<section id="signup" >
-   <form action="/signup" method="post">
+<section class="signup_section" >
+   <form id="signup" action="/signup" >
         <label for="username">Username :</label>
-        <input type="text" name="username" id="username" aria-label="username">
+        <input type="text" name="username" id="username" aria-label="username" required>
         <label for="email">Email :</label>
-        <input type="email" name="email" id="email" aria-label="email">
+        <input type="email" name="email" id="email" aria-label="email" required>
         <label for="password">Password :</label>
-        <input type="password" name="password" id="password" aria-label="password">  
+        <input type="password" name="password" id="password" aria-label="password" required>  
         <label for="confirm-password">Confirm Password :</label>
-        <input type="password" name="confirm_password" id="confirm-password" aria-label="confirm-password"> 
+        <input type="password" name="confirm_password" id="confirm-password" aria-label="confirm-password" required> 
         <div>
-        <input type="submit" value="signup" id="signup">
+        <input type="submit" value="signup" id="signupBtn">
         </div>
    </form>
 </section>
