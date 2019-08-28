@@ -4,6 +4,7 @@ node_js:
 services:
  - postgresql
 before_script:
+<<<<<<< HEAD
  - psql -c "CREATE DATABASE TEST_DB;" -U postgres
  - psql -c "CREATE USER userU WITH PASSWORD '1';" -U postgres
 
@@ -14,3 +15,10 @@ psql -c "CREATE DATABASE potential;" -U postgres
 psql -c "CREATE USER upotential WITH PASSWORD '1';" -U postgres
 
 
+=======
+ - psql -c "CREATE DATABASE potential;" -U postgres
+ - psql -c "CREATE USER upotential WITH PASSWORD '1';" -U postgres
+
+
+ 
+>>>>>>> 793ccc56e1dcbc782745483c1a589a812df97fbd
