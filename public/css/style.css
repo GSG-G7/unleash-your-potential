@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Raleway', sans-serif;
+
+}
+
+body {
+    max-width: 100%;
+    background: #232526;
+    font-family: 'Raleway', sans-serif;
+    color:rgb(228, 217, 217);
+}
+
+
+  
+.home__header {
+    width: 100%;
+    display: flex;
+    height: 80px;
+    align-items: center;
+    justify-content: space-between;
+    background: #232526;
+    padding: 10px 20px;
+  }
+  .home__header-navbar {
+    width: 100%;
+    justify-self: flex-start;
+  }
+  
+  .home__header-navbar-list {
+    width: 100%;
+    list-style-type: none;
+  }
+  .home__header-navbar-list-item {
+      display: inline-block;
+      margin: 0 5px;
+    }
+
+ .home__header-navbar-list-item-link--color{
+    background: linear-gradient( #4ca53aeb, #7ce978);
+    border-radius: 20px;
+    color: #fff;               
+ }
+  ul {
+    list-style-type: none;
+
+  }
+  hr{
+    width: 100%;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+form{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+}
+.input{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+#login{
+    width: 100%;
+    height: 100%;
+}
+
+.add_post_btn{
+    background: linear-gradient( #4ca53aeb, #7ce978);
+    border-radius: 15px;
+    text-align: center;
+    width: 90px;
+    height: 40px;
+    color:rgb(228, 217, 217);
+    margin-bottom: 10px;
+}
+  .home__header-navbar-list-item-link {
+    text-decoration: none;
+    text-transform: capitalize;
+    font-family: Roboto;
+    color: #ccc;
+    padding: 5px 15px;
+  }
+
+  .blog__list__title {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1rem;
+    background: linear-gradient(#4ca53aeb, #7ce978);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -ms-background-clip: text;
+    -ms-text-fill-color: transparent;
+    -o-background-clip: text;
+    -o-text-fill-color: transparent; 
+  }
+  .blog__section{
+    margin: 20px 5px 5px 30px;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    
+    justify-content :space-around;
+  }
