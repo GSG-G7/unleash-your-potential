@@ -7,7 +7,9 @@ const { postLogin } = require('./postLogin');
 const { postSignup } = require('./postSignup');
 const { getAddPost } = require('./getAddPost');
 const { addPost } = require('./addPost');
-const { getUserData } = require('./getUserData');
+const { getUserData } = require('./getUserProfile');
+const { getLogout } = require('./getLogout');
+
 const { client, server } = require('./error');
 
 const router = express.Router();
@@ -15,6 +17,7 @@ const router = express.Router();
 router.get('/', getHome);
 router.get('/login', getLogin);
 router.post('/login', postLogin);
+router.get('/logout', getLogout);
 router.get('/signup', getSignup);
 router.post('/signup', postSignup);
 router.get('/addpost', getAddPost);

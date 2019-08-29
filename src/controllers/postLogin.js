@@ -1,6 +1,7 @@
 const Joi = require('@hapi/joi');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+
 require('env2')('./config.env');
 
 const { getUser } = require('../database/queries/getUser');
@@ -16,11 +17,16 @@ exports.postLogin = (req, res) => {
         .then((isValid) => {
           if (isValid) {
             jwt.sign(value, process.env.PRIVATEKEY, { algorithm: 'HS256' }, (err, token) => {
+              
               res.cookie('unleash', token);
               getUser(value).then((user) => user.rows[0])
                 .then((user) => {
                   res.cookie('id', user.id);
-                  res.render('home', { name: user.user_name });
+                  res.cookie('username', user.user_name);
+                  res.render('home', {
+                     name: user.user_name,
+                     isLogedIn: true
+                   });
                 });
             });
           } else {

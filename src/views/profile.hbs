@@ -1,9 +1,5 @@
-{{> header}}
 
 <section class="UserData__section" id="">
-  <div>
-    <a href="/">Home Page</a>
-  </div>
   {{#each UserData}}
   <ul class="UserData__list">
     <h4 class="UserData__list__user_name"> Username : {{this.user_name}}</h4>
@@ -14,4 +10,3 @@
 
 </section>
 
-{{> footer}}
