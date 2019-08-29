@@ -1,16 +1,23 @@
 {{> header}}
 
 <section class="blog__section" id="home">
-  <div>
-    <a href="/addpost">Add Post</a>
+  <div class="add_post_btn">
+    <a class="add_post_link" href="/addpost"> + Add Post</a>
   </div>
   {{#each allPosts}}
   <ul class="blog__list">
-    <h4 class="blog__list__title"> Title : {{this.title}}</h4>
-    <li class="blog__list__description">description : {{this.description}}</li>
-    <li class="blog__list__content">content :{{this.content}}</li>
-    <li class="blog__list__publishedAt"> publishedAt :{{this.published_at}} </li>
-    <li class="blog__list__username">added by :{{this.user_id}}</li>
+    <li>
+      <div>
+        <h4 class="blog__list__title">  Post Title : {{this.title}}</h4>
+        <h4 class="blog__list__description">description : {{this.description}}</h4>
+        <h4 class="blog__list__content">content :{{this.content}}</h4>
+        <h4 class="blog__list__publishedAt"> publishedAt :{{this.published_at}} </h4>
+        <h4 class="blog__list__username">added by :{{this.user_id}}</h4>
+      </div>
+    </li>
+    
+   
+
   </ul>
   {{/each}}
 
