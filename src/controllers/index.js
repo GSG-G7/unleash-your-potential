@@ -10,6 +10,8 @@ const { addPost } = require('./addPost');
 const { getUserData } = require('./getUserProfile');
 const { getLogout } = require('./getLogout');
 
+const { client, server } = require('./error');
+
 const router = express.Router();
 
 router.get('/', getHome);
@@ -21,5 +23,9 @@ router.post('/signup', postSignup);
 router.get('/addpost', getAddPost);
 router.post('/addpost', addPost);
 router.get('/profile', getUserData);
+
+
+router.use('*', client);
+router.use(server);
 
 module.exports = router;

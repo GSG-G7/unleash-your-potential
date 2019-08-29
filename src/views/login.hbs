@@ -1,12 +1,13 @@
-<section id="login">
-   <form action="/login" method="post" id="login__form" class="login__form ">
+<section id="login" class="login_section">
+   <h4 class="login__h4">Login  </h4>
+   <form action="/login" method="post" id="login__form" class="login__form">
       <h5>{{error}}</h5>
 
       <label for="email">Email :</label>
       <input type="email" name="email" id="email" required>
       <label for="password">Password :</label>
       <input type="password" name="password" id="password" maxlength="30" required>
-      <input type="submit" value="login" id="login">
-      <div> <a href="/signup">Sign Up</a> </div>
+      <input type="submit" class="login_submit_btn" value="login" id="login">
+      <div> <a href="/signup"> Doen't have account ? Sign Up</a> </div>
    </form>
 </section>
