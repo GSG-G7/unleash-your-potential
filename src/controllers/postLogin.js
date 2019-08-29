@@ -17,16 +17,15 @@ exports.postLogin = (req, res) => {
         .then((isValid) => {
           if (isValid) {
             jwt.sign(value, process.env.PRIVATEKEY, { algorithm: 'HS256' }, (err, token) => {
-              
               res.cookie('unleash', token);
               getUser(value).then((user) => user.rows[0])
                 .then((user) => {
                   res.cookie('id', user.id);
                   res.cookie('username', user.user_name);
                   res.render('home', {
-                     name: user.user_name,
-                     isLogedIn: true
-                   });
+                    name: user.user_name,
+                    isLogedIn: true,
+                  });
                 });
             });
           } else {

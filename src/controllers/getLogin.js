@@ -1,3 +1,3 @@
-exports.getLogin = (req, res, next) => {
+exports.getLogin = (req, res) => {
   res.render('login');
 };
