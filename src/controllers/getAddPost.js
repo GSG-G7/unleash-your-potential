@@ -1,3 +1,3 @@
-exports.getAddPost= (req, res, next) => {
+exports.getAddPost = (req, res) => {
   res.render('addpost');
 };
