@@ -20,7 +20,7 @@ signUpForm.addEventListener('submit', (e) => {
     signUpForm.appendChild(PWerrorMessage);
     e.preventDefault();
   }
-  if (!Number.isNaN(username)) {
+  if (Number.isNaN(username)) {
     const UerrorMessage = document.createElement('p');
     UerrorMessage.textContent = 'UserName should not be a Number ';
     UerrorMessage.style.color = 'red';
