@@ -6,7 +6,6 @@ exports.signupSchema = Joi.object().keys({
   password: Joi.string().regex(/[a-zA-Z0-9]/).min(3).max(30)
     .required(),
   confirm_password: Joi.string().valid(Joi.ref('password')).required(),
-
 });
 
 exports.loginSchema = Joi.object().keys({
