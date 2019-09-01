@@ -1,20 +1,15 @@
 const jwt = require('jsonwebtoken');
+const { getUserById } = require('../database/queries/getUserById');
 require('env2')('./config.env');
 
-const { getUserById } = require('../database/queries/getUserById');
 
-exports.getUserData = (req, res, next) => { 
-  if (req.logedIn) {
-    const unleash = req.unleash;
-      getUserById(unleash.id)
-      .then((User) => {      
-        res.render('profile', { 
-          UserData: User.rows,
+exports.getUserData = (req, res) => {
+  req.logedIn ?
+        res.render('profile', {
+          UserData: req.unleash,
           isLogedIn: true,
-          name: User.rows[0].user_name,
-        });
-      })
-      .catch((error) => next(error.stacks));
-  }
+          name: req.unleash.user_name,
+        })
+  : res.render('login');
 };
-// DONE
+

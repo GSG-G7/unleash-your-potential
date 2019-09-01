@@ -5,13 +5,18 @@ require('env2')('./config.env');
 const { validate } = require('./validate');
 const { getUser } = require('../database/queries/getUser');
 const { loginSchema } = require('./schemas');
+const { getPosts } = require('../database/queries/getPost');
 
 exports.getLogin = (req, res) => {
   if (req.logedIn) {
-    res.render('home', {
-      isLogedIn: req.logedIn,
-      allPosts: req.unleash
-    });
+    getPosts().then(posts => 
+      res.render('home', {
+        name: req.unleash.user_name,
+        isLogedIn: req.logedIn,
+        allPosts: posts.rows
+      })
+    )
+    
   }
   else res.render('login');
 };
@@ -30,10 +35,13 @@ exports.postLogin = (req, res) => {
       jwt.sign(opjectForToken, process.env.PRIVATEKEY, { algorithm: 'HS256' }, (err, token) => {
         res.cookie('unleash', token);
         req.logedIn = true;
-        res.render('home', {
-          name: opjectForToken.user_name,
-          isLogedIn: req.logedIn,
-        });
+        getPosts().then(posts => 
+          res.render('home', {
+            name: opjectForToken.user_name,
+            isLogedIn: req.logedIn,
+            allPosts: posts.rows
+          })
+        )
       })
     )
     .catch(err => res.render('login', { error: 'Password or email is wrong' }))
