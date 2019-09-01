@@ -1,27 +1,23 @@
 const express = require('express');
 
-const { getSignup } = require('./getSignup');
 const { getHome } = require('./getHome');
-const { getLogin } = require('./getLogin');
-const { postLogin } = require('./postLogin');
-const { postSignup } = require('./postSignup');
-const { getAddPost } = require('./getAddPost');
-const { addPost } = require('./addPost');
-const { getUserData } = require('./getUserProfile');
+const { postLogin, getLogin } = require('./login');
+const { postSignup, getSignup } = require('./signup');
+const { addPost, getAddPost } = require('./addPost');
+const { getUserData } = require('./getProfile');
 const { getLogout } = require('./getLogout');
-
+const { valid } = require('./validate');
 const { client, server } = require('./error');
 
 const router = express.Router();
-
+router.use(valid)
 router.get('/', getHome);
-router.get('/login', getLogin);
-router.post('/login', postLogin);
+
+router.route('/login').get(getLogin).post(postLogin);
+router.route('/signup').get(getSignup).post(postSignup);
+router.route('/addpost').get(getAddPost).post(addPost);
+
 router.get('/logout', getLogout);
-router.get('/signup', getSignup);
-router.post('/signup', postSignup);
-router.get('/addpost', getAddPost);
-router.post('/addpost', addPost);
 router.get('/profile', getUserData);
 
 
