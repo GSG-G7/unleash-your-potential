@@ -10,13 +10,16 @@ exports.addPostTest = test('test add post to database', t => {
   const user = { username: 'mohamm', email: 'mohamm@ghj.cn', hash: '123ghj' };
   const data = { title:' mohammad', description:' mohammad hammada', content: ' mohammad hammada henak' };
   const expected = {
-      id: 1,
-      title: ' mohammad',
-      description: ' mohammad hammada',
-      content: ' mohammad hammada henak',
-      published_at: publishedAt,
-      user_id: 1
-    }
+    id: 1,
+    title: ' mohammad',
+    description: ' mohammad hammada',
+    content: ' mohammad hammada henak',
+    published_at: '1 / 9 / 2019',
+    user_id: 1,
+    user_name: 'mohamm',
+    password: '123ghj',
+    email: 'mohamm@ghj.cn'
+  }
       dbBuild()
     .then(() => addUser(user))
     .then(() => addPost(data, 1))
