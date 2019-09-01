@@ -11,7 +11,7 @@ exports.getAddPost= (req, res, next) => {
 };
 
 exports.addPost = (req, res, next) => 
-  addPost(req.body)
+  addPost(req.body, req.unleash.id)
     .then((result) => res.redirect('/'))
     .catch((err) => next(err.stack));
 //DONE
