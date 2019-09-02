@@ -5,6 +5,6 @@ exports.getUserData = (req, res) => {
   req.logedIn ? res.render('profile', {
     UserData: req.unleash,
     isLogedIn: true,
-    name: req.unleash.user_name,
+    name: req.unleash.userName,
   }) : res.redirect('/login');
 };

@@ -3,7 +3,7 @@ const { getPosts } = require('../database/queries/getPost');
 
 exports.getHome = (req, res, next) => {
   let username = '';
-  if (req.logedIn) { username = req.unleash.user_name; }
+  if (req.logedIn) { username = req.unleash.userName; }
   getPosts()
     .then((posts) => res.render('home', {
       allPosts: posts.rows,

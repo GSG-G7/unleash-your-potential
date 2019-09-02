@@ -4,7 +4,7 @@ exports.getAddPost = (req, res) => {
   if (req.logedIn) {
     res.render('addpost', {
       isLogedIn: req.logedIn,
-      name: req.unleash.user_name,
+      name: req.unleash.userName,
     });
   } else res.redirect('/login');
 };

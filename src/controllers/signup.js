@@ -12,10 +12,10 @@ exports.getSignup = (req, res) => {
 
 exports.postSignup = (req, res) => validate(req, res, signupSchema)
   .then((userData) => {
-    const { username, email, password } = userData;
+    const { userName, email, password } = userData;
     bcrypt.genSalt(10)
       .then((salt) => bcrypt.hash(password, salt))
-      .then((hash) => addUser({ username, email, hash }))
+      .then((hash) => addUser({ userName, email, hash }))
       .then(() => res.redirect('/'));
   })
   .catch((err) => res.render('signup', { error: err }));
