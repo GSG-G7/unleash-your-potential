@@ -10,7 +10,7 @@ const { valid } = require('./validate');
 const { client, server } = require('./error');
 
 const router = express.Router();
-router.use(valid)
+router.use(valid);
 router.get('/', getHome);
 
 router.route('/login').get(getLogin).post(postLogin);

@@ -9,11 +9,7 @@ const { getPosts } = require('../database/queries/getPost');
 
 exports.getLogin = (req, res) => {
   if (req.logedIn) {
-    getPosts().then((posts) => res.render('home', {
-      name: req.unleash.user_name,
-      isLogedIn: req.logedIn,
-      allPosts: posts.rows,
-    }));
+    getPosts().then(() => res.redirect('/'));
   } else res.render('login');
 };
 
@@ -29,11 +25,7 @@ exports.postLogin = (req, res) => {
       .then((opjectForToken) => jwt.sign(opjectForToken, process.env.PRIVATEKEY, { algorithm: 'HS256' }, (err, token) => {
         res.cookie('unleash', token);
         req.logedIn = true;
-        getPosts().then((posts) => res.render('home', {
-          name: opjectForToken.user_name,
-          isLogedIn: req.logedIn,
-          allPosts: posts.rows,
-        }));
+        res.redirect('/');
       }))
       .catch(() => res.render('login', { error: 'Password or email is wrong' })));
 };
