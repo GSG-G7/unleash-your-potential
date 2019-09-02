@@ -7,4 +7,3 @@ exports.dbBuild = () => {
   const sql = readFileSync(join(__dirname, 'database.sql')).toString();
   return connection.query(sql);
 };
-

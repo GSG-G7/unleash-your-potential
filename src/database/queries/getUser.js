@@ -6,5 +6,4 @@ exports.getUser = (data) => {
     text: 'SELECT * FROM users WHERE email = $1',
     values: [email],
   });
-}
-;
+};

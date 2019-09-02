@@ -1,7 +1,7 @@
 const { join } = require('path');
 const express = require('express');
 const exphs = require('express-handlebars');
-const cookieParser = require('cookie-parser')
+const cookieParser = require('cookie-parser');
 
 const router = require('./controllers/index');
 
