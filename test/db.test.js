@@ -9,7 +9,7 @@ const date = new Date();
 const publishedAt = `${date.getDate()} / ${date.getMonth() + 1} / ${date.getFullYear()}`;
 
 exports.addPostTest = test('test add post to database', (t) => {
-  const user = { userName: 'mohamm', email: 'mohamm@ghj.cn', hash: '123ghj' };
+  const user = { username: 'mohamm', email: 'mohamm@ghj.cn', hash: '123ghj' };
   const data = { title: ' mohammad', description: ' mohammad hammada', content: ' mohammad hammada henak' };
   const expected = {
     id: 1,
@@ -18,7 +18,7 @@ exports.addPostTest = test('test add post to database', (t) => {
     content: ' mohammad hammada henak',
     published_at: publishedAt,
     user_id: 1,
-    userName: 'mohamm',
+    username: 'mohamm',
     password: '123ghj',
     email: 'mohamm@ghj.cn',
   };
@@ -34,10 +34,10 @@ exports.addPostTest = test('test add post to database', (t) => {
     });
 });
 exports.addUserTest = test('test add user to database', (t) => {
-  const user = { userName: 'mohamm', email: 'mohamm@ghj.cn', hash: '123ghj' };
+  const user = { username: 'mohamm', email: 'mohamm@ghj.cn', hash: '123ghj' };
   const expected = {
     id: 1,
-    userName: 'mohamm',
+    username: 'mohamm',
     password: '123ghj',
     email: 'mohamm@ghj.cn',
   };

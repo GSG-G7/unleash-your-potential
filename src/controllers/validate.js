@@ -7,6 +7,7 @@ exports.valid = (req, res, next) => {
     else {
       req.logedIn = true;
       req.unleash = unleash;
+      console.log(req.unleash);
     }
     next();
   });

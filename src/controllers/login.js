@@ -19,8 +19,10 @@ exports.postLogin = (req, res) => {
       .then((result) => bcrypt.compare(value.password, (result.rows[0].password)))
       .then((isValid) => (isValid ? getUser(value) : 'error'))
       .then((user) => {
-        const { id, user_name: userName, email } = user.rows[0];
-        return { id, userName, email };
+        console.log(user);
+
+        const { id, user_name: username, email } = user.rows[0];
+        return { id, username, email };
       })
       .then((opjectForToken) => jwt.sign(opjectForToken, process.env.PRIVATEKEY, { algorithm: 'HS256' }, (err, token) => {
         res.cookie('unleash', token);
