@@ -1,12 +1,10 @@
 
 <section class="UserData__section" id="">
-  {{#each UserData}}
   <ul class="UserData__list">
-    <h4 class="UserData__list__user_name"> Username : {{this.user_name}}</h4>
-    <li class="UserData__list__email">Email : {{this.email}}</li>
+    <h4 class="UserData__list__user_name"> Username : {{UserData.username}}</h4>
+    <li class="UserData__list__email">Email : {{UserData.email}}</li>
 
   </ul>
-  {{/each}}
 
 </section>
 

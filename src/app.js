@@ -1,7 +1,7 @@
-const path = require('path');
+const { join } = require('path');
 const express = require('express');
 const exphs = require('express-handlebars');
-const cookieParser = require('cookie-parser')
+const cookieParser = require('cookie-parser');
 
 const router = require('./controllers/index');
 
@@ -13,8 +13,8 @@ app.set('port', PORT);
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.use(express.static(path.join(__dirname, '..', 'public')));
-app.set('views', path.join(__dirname, 'views'));
+app.use(express.static(join(__dirname, '..', 'public')));
+app.set('views', join(__dirname, 'views'));
 
 app.set('view engine', 'hbs');
 app.use(router);
@@ -22,8 +22,8 @@ app.engine(
   'hbs',
   exphs({
     extname: 'hbs',
-    layoutsDir: path.join(__dirname, 'views', 'layouts'),
-    partialsDir: path.join(__dirname, 'views', 'partials'),
+    layoutsDir: join(__dirname, 'views', 'layouts'),
+    partialsDir: join(__dirname, 'views', 'partials'),
     defaultLayout: 'main',
 
   }),

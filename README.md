@@ -1,11 +1,5 @@
-# unleash-your-potential
-Simple Blog by using Express & Postgres .
-
-## Team Names :
-* Hashem Taha  
-* Rana Obeid  
-* Mohammad Alhalaq  
-* Asmaa Thabet
+# unleash-your-potential-v2
+Add Graphql to unleash-your-potential rather than rest.
 
 ## Table of contents
 * [User Stories](#user-stories)
@@ -127,9 +121,13 @@ we use our Heroku to connect it with github and have a link to our project .
 ## Important packages
 * Express 
 * express handlebars [to view data]
-* env2 
+* env2
 * @hapi/joi [for server side validation]
 * eslint 
 * nodemon 
-* supertest 
-* tape & tap-spec 
+* supertest
+* tape & tap-spec
+
+## in progress
+* apollo-server
+* bcrypt
